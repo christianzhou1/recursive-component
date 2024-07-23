@@ -34,10 +34,12 @@ export default function Home() {
   function RenderFolders({ folder }) {
     return (
       <li className="my-1.5" key={folder.name}>
+        {/* current level folders */}
         <span className="flex items-center gap-2">
           <FolderIcon className="size-6  text-blue-400" />
           {folder.name}
         </span>
+        {/* recursive calls */}
         <ul className="pl-6">
           {folder.folders?.map((folder) => (
             <RenderFolders folder={folder} key={folder.name} />
